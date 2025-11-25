@@ -51,6 +51,7 @@ The application includes the complete NAICS 2022 classification system:
 ## Development Setup
 - **Port**: 5000 (configured for Replit environment)
 - **Host**: 0.0.0.0 for Replit proxy support
+- **Allowed Hosts**: Configured for `.replit.dev` and `.repl.co` domains
 - **Dev Command**: `npm run dev`
 - **Build Command**: `npm run build`
 
