@@ -1,14 +1,41 @@
-import React, { useState } from 'react';
-import { Terminal, Search, Lock, Activity, TrendingUp, AlertTriangle, FileText } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Terminal, Search, Lock, Activity, TrendingUp, AlertTriangle, FileText, ChevronDown, ChevronUp } from 'lucide-react';
 import { NaicsCode } from '../types';
 import { NAICS_DATA } from '../data/naicsData';
 
 export const NaicsTerminal: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [showTopFade, setShowTopFade] = useState(false);
+  const [showBottomFade, setShowBottomFade] = useState(true);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
+      setShowTopFade(scrollTop > 20);
+      setShowBottomFade(scrollTop < scrollHeight - clientHeight - 20);
+    }
+  };
+
+  useEffect(() => {
+    const scrollEl = scrollRef.current;
+    if (scrollEl) {
+      handleScroll();
+      scrollEl.addEventListener('scroll', handleScroll);
+      return () => scrollEl.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
 
   const filtered = NAICS_DATA.filter(item => 
     item.code.includes(searchTerm) || item.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = 0;
+      handleScroll();
+    }
+  }, [searchTerm]);
 
   return (
     <section id="intel" className="py-24 bg-neutral-900 border-b border-white/10 relative overflow-hidden">
@@ -114,25 +141,45 @@ export const NaicsTerminal: React.FC = () => {
                    <div className="col-span-3 text-right">Cat</div>
                 </div>
 
-                {/* Scrollable List */}
-                <div className="overflow-y-auto flex-1 pr-2 space-y-1 naics-scrollbar">
-                  {filtered.length > 0 ? (
-                    filtered.map((item, idx) => (
-                      <div key={idx} className="grid grid-cols-12 px-2 py-3 hover:bg-white/10 cursor-pointer transition-colors group rounded border border-transparent hover:border-white/5">
-                        <div className="col-span-3 text-green-500/80 font-bold group-hover:text-green-400">{item.code}</div>
-                        <div className="col-span-6 text-neutral-300 group-hover:text-white">{item.title}</div>
-                        <div className="col-span-3 text-right text-neutral-500 group-hover:text-neutral-300">[{item.category}]</div>
+                {/* Scrollable List Container */}
+                <div className="relative flex-1 min-h-0">
+                  {/* Top scroll fade indicator */}
+                  <div 
+                    className={`absolute top-0 left-0 right-3 h-8 scroll-fade-top z-10 pointer-events-none transition-opacity duration-300 flex items-center justify-center ${showTopFade ? 'opacity-100' : 'opacity-0'}`}
+                  >
+                    <ChevronUp className="w-4 h-4 text-green-500/60 animate-pulse" />
+                  </div>
+
+                  {/* Scrollable List */}
+                  <div 
+                    ref={scrollRef}
+                    className="overflow-y-auto h-full pr-2 space-y-1 naics-scrollbar scroll-smooth"
+                  >
+                    {filtered.length > 0 ? (
+                      filtered.map((item, idx) => (
+                        <div key={idx} className="grid grid-cols-12 px-2 py-3 hover:bg-white/10 cursor-pointer transition-colors group rounded border border-transparent hover:border-white/5">
+                          <div className="col-span-3 text-green-500/80 font-bold group-hover:text-green-400">{item.code}</div>
+                          <div className="col-span-6 text-neutral-300 group-hover:text-white">{item.title}</div>
+                          <div className="col-span-3 text-right text-neutral-500 group-hover:text-neutral-300">[{item.category}]</div>
+                        </div>
+                      ))
+                    ) : (
+                      <div className="h-full flex flex-col items-center justify-center text-neutral-600 space-y-4 border border-dashed border-white/10 rounded">
+                        <Terminal className="w-8 h-8 opacity-50" />
+                        <p>NO RECORDS FOUND ON LOCAL NODE.</p>
+                        <button className="text-xs border border-white/20 px-4 py-2 hover:bg-white hover:text-black transition-colors">
+                          INITIATE DEEP SEARCH
+                        </button>
                       </div>
-                    ))
-                  ) : (
-                    <div className="h-full flex flex-col items-center justify-center text-neutral-600 space-y-4 border border-dashed border-white/10 rounded">
-                      <Terminal className="w-8 h-8 opacity-50" />
-                      <p>NO RECORDS FOUND ON LOCAL NODE.</p>
-                      <button className="text-xs border border-white/20 px-4 py-2 hover:bg-white hover:text-black transition-colors">
-                        INITIATE DEEP SEARCH
-                      </button>
-                    </div>
-                  )}
+                    )}
+                  </div>
+
+                  {/* Bottom scroll fade indicator */}
+                  <div 
+                    className={`absolute bottom-0 left-0 right-3 h-8 scroll-fade-bottom z-10 pointer-events-none transition-opacity duration-300 flex items-center justify-center ${showBottomFade && filtered.length > 8 ? 'opacity-100' : 'opacity-0'}`}
+                  >
+                    <ChevronDown className="w-4 h-4 text-green-500/60 animate-pulse" />
+                  </div>
                 </div>
 
                 {/* Footer status */}
