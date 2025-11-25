@@ -3,16 +3,74 @@ import { Shield, Building2, Globe, Check } from 'lucide-react';
 
 const FEDERAL_CLIENTS = {
   Military: [
-    'U.S. Army', 'U.S. Navy', 'U.S. Air Force', 'U.S. Marine Corps', 'U.S. Coast Guard', 'Defense Logistics Agency', 'U.S. Cyber Command'
+    'United States Army',
+    'United States Navy',
+    'United States Air Force',
+    'United States Marine Corps',
+    'United States Coast Guard',
+    'U.S. Army Corps of Engineers',
+    'Defense Logistics Agency',
+    'Defense Health Agency',
+    'Defense Information Systems Agency',
+    'Missile Defense Agency',
+    'U.S. Cyber Command'
   ],
   Civilian: [
-    'Dept of Homeland Security', 'Dept of Veterans Affairs', 'Dept of Energy', 'Dept of Transportation', 'Dept of Justice', 'General Services Admin'
+    'Department of Homeland Security',
+    'Department of Veterans Affairs',
+    'Department of Energy',
+    'Department of Transportation',
+    'Department of Justice',
+    'Department of State',
+    'Department of Agriculture',
+    'Department of Commerce',
+    'Department of the Interior',
+    'Department of Health and Human Services',
+    'Department of the Treasury',
+    'Department of Labor',
+    'Department of Housing and Urban Development',
+    'Department of Education',
+    'General Services Administration',
+    'Environmental Protection Agency',
+    'Social Security Administration',
+    'National Institute of Standards and Technology',
+    'Library of Congress',
+    'Government Publishing Office',
+    'Tennessee Valley Authority',
+    'Smithsonian Institution',
+    'National Archives and Records Administration',
+    'Joint House and Senate (U.S. Congress)'
   ],
   Independent: [
-    'NASA', 'Small Business Admin', 'National Science Foundation', 'U.S. Postal Service'
+    'NASA',
+    'Small Business Administration',
+    'Office of Personnel Management',
+    'Federal Trade Commission',
+    'Federal Communications Commission',
+    'Nuclear Regulatory Commission',
+    'National Science Foundation',
+    'U.S. Agency for International Development',
+    'U.S. Postal Service',
+    'Federal Deposit Insurance Corporation',
+    'Securities and Exchange Commission',
+    'Commodity Futures Trading Commission',
+    'Export–Import Bank of the United States',
+    'National Labor Relations Board',
+    'Equal Employment Opportunity Commission',
+    'Federal Reserve System',
+    'U.S. International Trade Commission',
+    'U.S. Trade and Development Agency',
+    'Peace Corps',
+    'International Development Finance Corporation',
+    'U.S. Election Assistance Commission',
+    'Amtrak (National Railroad Passenger Corporation)'
   ],
   Intel: [
-    'Central Intelligence Agency', 'National Geospatial-Intel Agency', 'Natl Security Agency', 'Defense Intelligence Agency'
+    'Central Intelligence Agency',
+    'National Security Agency',
+    'Defense Intelligence Agency',
+    'National Geospatial-Intelligence Agency',
+    'Office of the Director of National Intelligence'
   ]
 };
 
