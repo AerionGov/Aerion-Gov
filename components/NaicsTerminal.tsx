@@ -103,7 +103,7 @@ export const NaicsTerminal: React.FC = () => {
                 </div>
 
                 {/* Scrollable List */}
-                <div className="overflow-y-auto flex-1 pr-2 space-y-1 custom-scrollbar">
+                <div className="overflow-y-auto flex-1 pr-2 space-y-1 naics-scrollbar">
                   {filtered.length > 0 ? (
                     filtered.map((item, idx) => (
                       <div key={idx} className="grid grid-cols-12 px-2 py-3 hover:bg-white/10 cursor-pointer transition-colors group rounded border border-transparent hover:border-white/5">
