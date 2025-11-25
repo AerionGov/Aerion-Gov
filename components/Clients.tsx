@@ -80,8 +80,17 @@ const SLED_CLIENTS = [
 
 export const Clients: React.FC = () => {
   return (
-    <section id="clients" className="py-24 bg-black border-b border-white/10">
-      <div className="max-w-[1800px] mx-auto px-6">
+    <section id="clients" className="py-24 bg-black border-b border-white/10 relative overflow-hidden">
+      {/* Hexagon Pattern Background */}
+      <div className="absolute inset-0 opacity-[0.02]" style={{
+        backgroundImage: `
+          radial-gradient(circle at 0% 50%, rgba(255,255,255,0) 9px, rgba(255,255,255,1) 10px, rgba(255,255,255,0) 11px),
+          radial-gradient(circle at 100% 50%, rgba(255,255,255,0) 9px, rgba(255,255,255,1) 10px, rgba(255,255,255,0) 11px)
+        `,
+        backgroundSize: '50px 30px',
+        backgroundPosition: '0 0, 25px 15px'
+      }}></div>
+      <div className="max-w-[1800px] mx-auto px-6 relative z-10">
         
         <div className="mb-20">
           <span className="font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase text-neutral-500 mb-6 block">

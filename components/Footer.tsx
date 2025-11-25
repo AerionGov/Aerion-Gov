@@ -3,8 +3,17 @@ import { Shield } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="py-24 px-6 bg-black text-neutral-500 text-sm border-t border-white/10">
-      <div className="max-w-[1800px] mx-auto grid md:grid-cols-4 gap-12 border-b border-white/10 pb-16 mb-16">
+    <footer className="py-24 px-6 bg-black text-neutral-500 text-sm border-t border-white/10 relative overflow-hidden">
+      {/* Concentric Circles Background */}
+      <div className="absolute inset-0 opacity-[0.015]" style={{
+        backgroundImage: `
+          radial-gradient(circle, transparent 0%, transparent 48%, rgba(255,255,255,1) 49%, rgba(255,255,255,1) 50%, transparent 51%),
+          radial-gradient(circle, transparent 0%, transparent 73%, rgba(255,255,255,1) 74%, rgba(255,255,255,1) 75%, transparent 76%)
+        `,
+        backgroundSize: '150px 150px',
+        backgroundPosition: 'center center'
+      }}></div>
+      <div className="max-w-[1800px] mx-auto grid md:grid-cols-4 gap-12 border-b border-white/10 pb-16 mb-16 relative z-10">
         
         <div className="col-span-1">
           <div className="flex items-center gap-3 mb-8 text-white">
@@ -56,7 +65,7 @@ export const Footer: React.FC = () => {
 
       </div>
       
-      <div className="max-w-[1800px] mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] font-mono uppercase tracking-widest text-neutral-600">
+      <div className="max-w-[1800px] mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] font-mono uppercase tracking-widest text-neutral-600 relative z-10">
          <span className="mb-4 md:mb-0">© 2025 AERION GOVERNMENT SOLUTIONS. ALL RIGHTS RESERVED.</span>
          <div className="flex gap-8">
             <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div> SYSTEM ONLINE</span>

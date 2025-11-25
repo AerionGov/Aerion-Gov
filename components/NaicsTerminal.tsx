@@ -13,8 +13,20 @@ export const NaicsTerminal: React.FC = () => {
   return (
     <section id="intel" className="py-24 bg-neutral-900 border-b border-white/10 relative overflow-hidden">
       
-      {/* Background FX */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none"></div>
+      {/* Circuit Board Pattern Background */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `
+          linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px),
+          linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px),
+          linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px)
+        `,
+        backgroundSize: '100px 100px, 100px 100px, 20px 20px, 20px 20px',
+        backgroundPosition: '-1px -1px, -1px -1px, -1px -1px, -1px -1px'
+      }}></div>
+      <div className="absolute top-20 left-20 w-2 h-2 bg-white rounded-full opacity-20"></div>
+      <div className="absolute top-40 right-32 w-2 h-2 bg-white rounded-full opacity-20"></div>
+      <div className="absolute bottom-32 left-40 w-2 h-2 bg-white rounded-full opacity-20"></div>
 
       <div className="max-w-[1800px] mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-5 gap-16">

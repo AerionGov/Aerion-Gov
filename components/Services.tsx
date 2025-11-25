@@ -58,10 +58,15 @@ export const Services: React.FC = () => {
   const [hovered, setHovered] = useState<string | null>(null);
 
   return (
-    <section id="capabilities" className="bg-black border-b border-white/10">
+    <section id="capabilities" className="bg-black border-b border-white/10 relative overflow-hidden">
+      {/* Dots Pattern Background */}
+      <div className="absolute inset-0 opacity-[0.04]" style={{
+        backgroundImage: 'radial-gradient(circle, rgba(255,255,255,1) 1px, transparent 1px)',
+        backgroundSize: '30px 30px'
+      }}></div>
       
       {/* Header */}
-      <div className="max-w-[1800px] mx-auto px-6 py-24">
+      <div className="max-w-[1800px] mx-auto px-6 py-24 relative z-10">
         <div className="max-w-4xl">
            <span className="font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase text-neutral-500 mb-6 block">
              // CAPABILITIES
@@ -77,7 +82,7 @@ export const Services: React.FC = () => {
       </div>
 
       {/* Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 border-t border-white/10 max-w-[1800px] mx-auto bg-black">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 border-t border-white/10 max-w-[1800px] mx-auto bg-black relative z-10">
         {CAPABILITIES.map((cap, idx) => (
           <div 
             key={cap.id}

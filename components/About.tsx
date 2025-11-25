@@ -26,8 +26,12 @@ const COMMITMENTS = [
 
 export const About: React.FC = () => {
   return (
-    <section id="mission" className="bg-neutral-950 border-b border-white/10 py-24">
-      <div className="max-w-[1800px] mx-auto px-6">
+    <section id="mission" className="bg-neutral-950 border-b border-white/10 py-24 relative overflow-hidden">
+      {/* Diagonal Lines Background */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,1) 35px, rgba(255,255,255,1) 36px)'
+      }}></div>
+      <div className="max-w-[1800px] mx-auto px-6 relative z-10">
         
         <div className="grid lg:grid-cols-2 gap-20 items-start">
           <div>
