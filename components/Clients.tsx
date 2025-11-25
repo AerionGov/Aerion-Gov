@@ -95,106 +95,102 @@ export const Clients: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-24">
+        {/* Federal Agencies */}
+        <div className="mb-20">
+          <div className="flex items-center gap-4 mb-12 border-b border-white/10 pb-4">
+            <Shield className="w-6 h-6 text-white" />
+            <h3 className="text-2xl font-bold uppercase tracking-tight text-white">Federal Agencies</h3>
+          </div>
           
-          {/* Federal Column */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+            {/* Defense & Military */}
+            <div>
+              <h4 className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-4">Defense & Military</h4>
+              <ul className="space-y-2">
+                {FEDERAL_CLIENTS.Military.map(client => (
+                  <li key={client} className="text-neutral-300 font-light text-sm flex items-center gap-2">
+                    <div className="w-1 h-1 bg-white rounded-full flex-shrink-0"></div>
+                    {client}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Intelligence Community */}
+            <div>
+              <h4 className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-4">Intelligence Community</h4>
+              <ul className="space-y-2">
+                {FEDERAL_CLIENTS.Intel.map(client => (
+                  <li key={client} className="text-neutral-300 font-light text-sm flex items-center gap-2">
+                    <div className="w-1 h-1 bg-white rounded-full flex-shrink-0"></div>
+                    {client}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Civilian Agencies */}
+            <div className="md:col-span-2 lg:col-span-2">
+              <h4 className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-4">Civilian Agencies</h4>
+              <ul className="grid md:grid-cols-2 gap-x-8 gap-y-2">
+                {FEDERAL_CLIENTS.Civilian.map(client => (
+                  <li key={client} className="text-neutral-300 font-light text-sm flex items-center gap-2">
+                    <div className="w-1 h-1 bg-white rounded-full flex-shrink-0"></div>
+                    {client}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Independent Agencies - spans full width */}
+            <div className="md:col-span-2 lg:col-span-4">
+              <h4 className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-4">Independent Agencies</h4>
+              <ul className="grid md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-2">
+                {FEDERAL_CLIENTS.Independent.map(client => (
+                  <li key={client} className="text-neutral-300 font-light text-sm flex items-center gap-2">
+                    <div className="w-1 h-1 bg-white rounded-full flex-shrink-0"></div>
+                    {client}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* SLED & Why Aerion */}
+        <div className="grid lg:grid-cols-2 gap-16">
+          {/* SLED */}
           <div>
-             <div className="flex items-center gap-4 mb-8 border-b border-white/10 pb-4">
-                <Shield className="w-6 h-6 text-white" />
-                <h3 className="text-2xl font-bold uppercase tracking-tight text-white">Federal Agencies</h3>
-             </div>
-             
-             <div className="grid md:grid-cols-2 gap-12">
-                <div className="space-y-8">
-                   <div>
-                      <h4 className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-4">Defense & Military</h4>
-                      <ul className="space-y-2">
-                          {FEDERAL_CLIENTS.Military.map(client => (
-                            <li key={client} className="text-neutral-300 font-light text-sm flex items-center gap-2">
-                               <div className="w-1 h-1 bg-white rounded-full"></div>
-                               {client}
-                            </li>
-                          ))}
-                      </ul>
-                   </div>
-                   <div>
-                      <h4 className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-4">Intelligence Community</h4>
-                      <ul className="space-y-2">
-                          {FEDERAL_CLIENTS.Intel.map(client => (
-                            <li key={client} className="text-neutral-300 font-light text-sm flex items-center gap-2">
-                               <div className="w-1 h-1 bg-white rounded-full"></div>
-                               {client}
-                            </li>
-                          ))}
-                      </ul>
-                   </div>
-                </div>
-
-                <div className="space-y-8">
-                   <div>
-                      <h4 className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-4">Civilian Agencies</h4>
-                      <ul className="space-y-2">
-                          {FEDERAL_CLIENTS.Civilian.map(client => (
-                            <li key={client} className="text-neutral-300 font-light text-sm flex items-center gap-2">
-                               <div className="w-1 h-1 bg-white rounded-full"></div>
-                               {client}
-                            </li>
-                          ))}
-                      </ul>
-                   </div>
-                   <div>
-                      <h4 className="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-4">Independent Agencies</h4>
-                      <ul className="space-y-2">
-                          {FEDERAL_CLIENTS.Independent.map(client => (
-                            <li key={client} className="text-neutral-300 font-light text-sm flex items-center gap-2">
-                               <div className="w-1 h-1 bg-white rounded-full"></div>
-                               {client}
-                            </li>
-                          ))}
-                      </ul>
-                   </div>
-                </div>
-             </div>
+            <div className="flex items-center gap-4 mb-8 border-b border-white/10 pb-4">
+              <Building2 className="w-6 h-6 text-white" />
+              <h3 className="text-2xl font-bold uppercase tracking-tight text-white">State, Local & Edu</h3>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {SLED_CLIENTS.map(client => (
+                <span key={client} className="px-4 py-2 bg-white/5 border border-white/10 text-sm text-neutral-300">
+                  {client}
+                </span>
+              ))}
+            </div>
           </div>
 
-          {/* SLED & Why Aerion */}
-          <div className="space-y-16">
-             
-             {/* SLED */}
-             <div>
-                <div className="flex items-center gap-4 mb-8 border-b border-white/10 pb-4">
-                  <Building2 className="w-6 h-6 text-white" />
-                  <h3 className="text-2xl font-bold uppercase tracking-tight text-white">State, Local & Edu</h3>
-                </div>
-                <div className="flex flex-wrap gap-3">
-                   {SLED_CLIENTS.map(client => (
-                      <span key={client} className="px-4 py-2 bg-white/5 border border-white/10 text-sm text-neutral-300">
-                         {client}
-                      </span>
-                   ))}
-                </div>
-             </div>
-
-             {/* Why Aerion */}
-             <div className="bg-neutral-900 p-8 border-l-4 border-white">
-                <div className="flex items-center gap-4 mb-6">
-                   <Globe className="w-6 h-6 text-white" />
-                   <h3 className="text-xl font-bold uppercase tracking-tight text-white">Why Choose Aerion</h3>
-                </div>
-                <ul className="grid md:grid-cols-2 gap-4">
-                   {[
-                      'Fast Response', 'Transparent Pricing', '100% Compliant', 'Vendor Reliability', 'Hard-to-Source Items', 'Mission Critical Support'
-                   ].map(item => (
-                      <li key={item} className="flex items-center gap-3 text-sm text-neutral-400">
-                         <Check className="w-4 h-4 text-green-500" />
-                         {item}
-                      </li>
-                   ))}
-                </ul>
-             </div>
-
+          {/* Why Aerion */}
+          <div className="bg-neutral-900 p-8 border-l-4 border-white">
+            <div className="flex items-center gap-4 mb-6">
+              <Globe className="w-6 h-6 text-white" />
+              <h3 className="text-xl font-bold uppercase tracking-tight text-white">Why Choose Aerion</h3>
+            </div>
+            <ul className="grid md:grid-cols-2 gap-4">
+              {[
+                'Fast Response', 'Transparent Pricing', '100% Compliant', 'Vendor Reliability', 'Hard-to-Source Items', 'Mission Critical Support'
+              ].map(item => (
+                <li key={item} className="flex items-center gap-3 text-sm text-neutral-400">
+                  <Check className="w-4 h-4 text-green-500" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
-
         </div>
 
       </div>
