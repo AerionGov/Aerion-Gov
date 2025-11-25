@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
           </p>
           <div className="font-mono text-[10px] uppercase tracking-widest space-y-2 text-neutral-600">
             <p>WASHINGTON D.C.</p>
-            <p>EST. 2024</p>
+            <p>EST. 2025</p>
           </div>
         </div>
 
@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
       </div>
       
       <div className="max-w-[1800px] mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] font-mono uppercase tracking-widest text-neutral-600">
-         <span className="mb-4 md:mb-0">© 2024 AERION GOVERNMENT SOLUTIONS. ALL RIGHTS RESERVED.</span>
+         <span className="mb-4 md:mb-0">© 2025 AERION GOVERNMENT SOLUTIONS. ALL RIGHTS RESERVED.</span>
          <div className="flex gap-8">
             <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div> SYSTEM ONLINE</span>
             <span>ENCRYPTED: TLS 1.3</span>

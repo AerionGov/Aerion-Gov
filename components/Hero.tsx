@@ -61,8 +61,8 @@ export const Hero: React.FC = () => {
             </div>
 
             <div className="font-mono text-[10px] text-neutral-500 uppercase tracking-widest flex justify-between border-t border-white/10 pt-4">
-                <div>UEI: 837-942-001</div>
-                <div>CAGE: 9X3B1</div>
+                <div>UEI: MCFGKK6LART4</div>
+                <div>CAGE/NCAGE: 15CZ4</div>
             </div>
           </div>
 
