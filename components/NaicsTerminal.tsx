@@ -1,63 +1,7 @@
 import React, { useState } from 'react';
 import { Terminal, Search, Lock, Activity, TrendingUp, AlertTriangle, FileText } from 'lucide-react';
 import { NaicsCode } from '../types';
-
-const NAICS_DATA: NaicsCode[] = [
-  // IT & COMPUTING
-  { code: '334111', title: 'ELECTRONIC COMPUTER MFG', category: 'IT' },
-  { code: '541511', title: 'CUSTOM COMPUTER PROGRAMMING SERVICES', category: 'IT' },
-  { code: '541512', title: 'COMPUTER SYSTEMS DESIGN SERVICES', category: 'IT' },
-  { code: '541519', title: 'OTHER COMPUTER RELATED SERVICES', category: 'IT' },
-  { code: '518210', title: 'COMPUTING INFRASTRUCTURE & DATA PROCESSING', category: 'IT' },
-  { code: '423430', title: 'COMPUTER PERIPHERAL EQUIPMENT WHOLESALE', category: 'IT' },
-  
-  // DEFENSE & AEROSPACE
-  { code: '336411', title: 'AIRCRAFT MANUFACTURING', category: 'Defense' },
-  { code: '336414', title: 'GUIDED MISSILE & SPACE VEHICLE MFG', category: 'Defense' },
-  { code: '332992', title: 'SMALL ARMS AMMUNITION MFG', category: 'Defense' },
-  { code: '332994', title: 'SMALL ARMS, ORDNANCE MFG', category: 'Defense' },
-  { code: '928110', title: 'NATIONAL SECURITY', category: 'Gov' },
-  { code: '336992', title: 'MILITARY ARMORED VEHICLE & TANK MFG', category: 'Defense' },
-  
-  // TRANSPORTATION
-  { code: '336111', title: 'AUTOMOBILE MANUFACTURING', category: 'Transport' },
-  { code: '336120', title: 'HEAVY DUTY TRUCK MANUFACTURING', category: 'Transport' },
-  { code: '481212', title: 'NONSCHEDULED CHARTERED FREIGHT AIR TRANSPORT', category: 'Logistics' },
-  { code: '484110', title: 'GENERAL FREIGHT TRUCKING, LOCAL', category: 'Logistics' },
-  { code: '484220', title: 'SPECIALIZED FREIGHT TRUCKING', category: 'Logistics' },
-  
-  // CONSTRUCTION & INFRASTRUCTURE
-  { code: '236210', title: 'INDUSTRIAL BUILDING CONSTRUCTION', category: 'Const' },
-  { code: '236220', title: 'COMMERCIAL & INSTITUTIONAL BUILDING CONST', category: 'Const' },
-  { code: '237310', title: 'HIGHWAY, STREET, AND BRIDGE CONSTRUCTION', category: 'Const' },
-  { code: '238210', title: 'ELECTRICAL CONTRACTORS', category: 'Const' },
-  { code: '238220', title: 'PLUMBING, HEATING, AND A/C CONTRACTORS', category: 'Const' },
-  { code: '332312', title: 'FABRICATED STRUCTURAL METAL MFG', category: 'Const' },
-  
-  // MEDICAL & SCIENTIFIC
-  { code: '325412', title: 'PHARMACEUTICAL PREPARATION MFG', category: 'Medical' },
-  { code: '339112', title: 'SURGICAL AND MEDICAL INSTRUMENT MFG', category: 'Medical' },
-  { code: '339113', title: 'SURGICAL APPLIANCE AND SUPPLIES MFG', category: 'Medical' },
-  { code: '423450', title: 'MEDICAL EQUIPMENT WHOLESALE', category: 'Medical' },
-  { code: '621111', title: 'OFFICES OF PHYSICIANS', category: 'Medical' },
-  { code: '622110', title: 'GENERAL MEDICAL AND SURGICAL HOSPITALS', category: 'Medical' },
-  
-  // SERVICES & CONSULTING
-  { code: '541330', title: 'ENGINEERING SERVICES', category: 'Services' },
-  { code: '541611', title: 'ADMINISTRATIVE MANAGEMENT CONSULTING', category: 'Consulting' },
-  { code: '541614', title: 'LOGISTICS CONSULTING SERVICES', category: 'Consulting' },
-  { code: '561110', title: 'OFFICE ADMINISTRATIVE SERVICES', category: 'Services' },
-  { code: '561210', title: 'FACILITIES SUPPORT SERVICES', category: 'Services' },
-  { code: '561612', title: 'SECURITY GUARDS AND PATROL SERVICES', category: 'Services' },
-  { code: '611430', title: 'PROFESSIONAL DEVELOPMENT TRAINING', category: 'Training' },
-  
-  // INDUSTRIAL SUPPLIES
-  { code: '315990', title: 'APPAREL ACCESSORIES MFG', category: 'Textiles' },
-  { code: '333924', title: 'INDUSTRIAL TRUCK & TRACTOR MFG', category: 'Industrial' },
-  { code: '335910', title: 'BATTERY MANUFACTURING', category: 'Energy' },
-  { code: '423830', title: 'INDUSTRIAL MACHINERY WHOLESALE', category: 'Industrial' },
-  { code: '423840', title: 'INDUSTRIAL SUPPLIES WHOLESALE', category: 'Industrial' }
-];
+import { NAICS_DATA } from '../data/naicsData';
 
 export const NaicsTerminal: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');

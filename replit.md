@@ -8,6 +8,7 @@ This is a React + Vite marketing website for Aerion Defense Systems, a governmen
 - **Styling**: Tailwind CSS (via CDN)
 - **Language**: TypeScript
 - **Build Tool**: Vite 6.2
+- **Data**: Official NAICS 2022 dataset (1,012 industry codes)
 
 ## Project Structure
 ```
@@ -22,6 +23,9 @@ This is a React + Vite marketing website for Aerion Defense Systems, a governmen
 │   ├── QuoteForm.tsx   # Quote request form
 │   ├── Services.tsx    # Capabilities showcase
 │   └── TacticalGraphic.tsx  # 3D graphics component
+├── data/
+│   ├── naicsData.ts    # Complete NAICS 2022 dataset (1,012 codes)
+│   └── naics_2022.txt  # Original NAICS hierarchy file
 ├── App.tsx             # Main app component
 ├── index.tsx           # Entry point
 ├── types.ts            # TypeScript type definitions
@@ -33,22 +37,30 @@ This is a React + Vite marketing website for Aerion Defense Systems, a governmen
 1. **Hero Section**: Mission-critical messaging with tactical design
 2. **About/Mission**: Company values and commitments
 3. **Services**: 7 core capabilities (Strategic Sourcing, Logistics, Defense, IT, Medical, etc.)
-4. **NAICS Terminal**: Interactive search for NAICS codes (static data, no API required)
+4. **NAICS Terminal**: Interactive search through complete NAICS 2022 dataset (1,012 industry codes)
 5. **Clients**: Federal agencies and SLED organizations
 6. **Responsive Design**: Mobile-friendly with tactical/military aesthetic
 
+## NAICS 2022 Integration
+The application includes the complete NAICS 2022 classification system:
+- **1,012 6-digit industry codes** covering all economic sectors
+- Organized by category (Agriculture, Mining, Manufacturing, Services, etc.)
+- Real-time client-side search functionality
+- Data sourced from official NAICS 2022 hierarchy
+
 ## Development Setup
 - **Port**: 5000 (configured for Replit environment)
-- **Host**: 0.0.0.0 with allowedHosts enabled for proxy support
+- **Host**: 0.0.0.0 for Replit proxy support
 - **Dev Command**: `npm run dev`
 - **Build Command**: `npm run build`
 
 ## Recent Changes (November 25, 2025)
 - Migrated from AI Studio to Replit environment
-- Updated Vite config to port 5000 with allowedHosts for Replit proxy
-- Installed Node.js dependencies
-- Configured workflow for automatic dev server startup
-- Note: GEMINI_API_KEY referenced in original README is not actually used in the application
+- Integrated complete NAICS 2022 dataset (1,012 codes)
+- Removed all Gemini API key references (not used)
+- Updated Vite config for Replit proxy compatibility
+- Created data parsing pipeline for NAICS hierarchy
+- Updated documentation to reflect new data source
 
 ## Dependencies
 ### Production
@@ -64,7 +76,7 @@ This is a React + Vite marketing website for Aerion Defense Systems, a governmen
 
 ## Notes
 - The application is purely frontend - no backend or API integration needed
-- NAICS data is hardcoded in the NaicsTerminal component
+- NAICS data is statically imported from data/naicsData.ts
 - Tailwind CSS is loaded via CDN in index.html
 - Custom fonts: Inter (sans) and JetBrains Mono (monospace)
 - Theme: Dark tactical design with military/government aesthetic
