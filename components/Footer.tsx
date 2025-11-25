@@ -29,9 +29,10 @@ export const Footer: React.FC = () => {
 
         <div className="col-span-1 flex flex-col space-y-4">
           <span className="text-white font-bold uppercase tracking-widest text-xs mb-4">Legal</span>
-          {['Privacy Policy', 'Terms of Service', 'Supplier Code', 'Accessibility'].map(item => (
-            <a key={item} href="#" className="hover:text-white transition-colors text-xs uppercase tracking-wider font-mono">{item}</a>
-          ))}
+          <a href="#privacy-policy" className="hover:text-white transition-colors text-xs uppercase tracking-wider font-mono">Privacy Policy</a>
+          <a href="#terms-of-service" className="hover:text-white transition-colors text-xs uppercase tracking-wider font-mono">Terms of Service</a>
+          <a href="#" className="hover:text-white transition-colors text-xs uppercase tracking-wider font-mono">Supplier Code</a>
+          <a href="#" className="hover:text-white transition-colors text-xs uppercase tracking-wider font-mono">Accessibility</a>
         </div>
 
         <div className="col-span-1">
