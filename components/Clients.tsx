@@ -3,6 +3,7 @@ import { Shield, Building2, Globe, Check } from 'lucide-react';
 
 const FEDERAL_CLIENTS = {
   Military: [
+    'Department of Defense',
     'United States Army',
     'United States Navy',
     'United States Air Force',
