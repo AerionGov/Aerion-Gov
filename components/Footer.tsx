@@ -39,8 +39,14 @@ export const Footer: React.FC = () => {
 
         <div className="col-span-1 flex flex-col space-y-4">
           <span className="text-white font-bold uppercase tracking-widest text-xs mb-4">Sitemap</span>
-          {['Mission', 'Capabilities', 'Intel / NAICS', 'Our Clients'].map(item => (
-            <a key={item} href={`#${item.toLowerCase().split(' ')[0]}`} className="hover:text-white transition-colors text-xs uppercase tracking-wider font-mono">{item}</a>
+          {[
+            { label: 'Mission', id: 'mission' },
+            { label: 'Capabilities', id: 'capabilities' },
+            { label: 'Intel / NAICS', id: 'intel' },
+            { label: 'Our Clients', id: 'clients' },
+            { label: 'Contact', id: 'contact' }
+          ].map(item => (
+            <a key={item.id} href={`#${item.id}`} className="hover:text-white transition-colors text-xs uppercase tracking-wider font-mono">{item.label}</a>
           ))}
         </div>
 
