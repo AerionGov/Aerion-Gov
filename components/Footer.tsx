@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield } from 'lucide-react';
+import { Shield, Mail, Phone } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -23,9 +23,17 @@ export const Footer: React.FC = () => {
           <p className="leading-relaxed text-neutral-400 font-light mb-8 max-w-[250px]">
             Providing the industrial backbone for national security and public infrastructure.
           </p>
-          <div className="font-mono text-[10px] uppercase tracking-widest space-y-2 text-neutral-600">
-            <p>WASHINGTON D.C.</p>
+          <div className="font-mono text-[10px] uppercase tracking-widest space-y-3 text-neutral-600">
+            <p>PHILADELPHIA, PA</p>
             <p>EST. 2025</p>
+            <a href="mailto:Support@aeriongov.com" className="flex items-center gap-2 hover:text-white transition-colors">
+              <Mail className="w-3 h-3" />
+              Support@aeriongov.com
+            </a>
+            <a href="tel:+12672702237" className="flex items-center gap-2 hover:text-white transition-colors">
+              <Phone className="w-3 h-3" />
+              (267) 270-2237
+            </a>
           </div>
         </div>
 
