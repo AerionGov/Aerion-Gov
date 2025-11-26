@@ -6,7 +6,8 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Mission', id: 'mission' },
   { label: 'Capabilities', id: 'capabilities' },
   { label: 'Intel / NAICS', id: 'intel' },
-  { label: 'Our Clients', id: 'clients' }
+  { label: 'Our Clients', id: 'clients' },
+  { label: 'Contact', id: 'contact' }
 ];
 
 export const Navbar: React.FC = () => {

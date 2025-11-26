@@ -5,6 +5,7 @@ import { About } from './components/About';
 import { Services } from './components/Services';
 import { NaicsTerminal } from './components/NaicsTerminal';
 import { Clients } from './components/Clients';
+import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { TermsOfService } from './components/TermsOfService';
@@ -49,6 +50,7 @@ export default function App() {
       <Services />
       <NaicsTerminal />
       <Clients />
+      <ContactForm />
       <Footer />
     </div>
   );
